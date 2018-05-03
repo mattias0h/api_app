@@ -12,6 +12,7 @@ class Post extends Component {
         <Panel.Heading>
           { title }
           { showLink && <Link to={`/posts/${id}`} className="pull-right">Show</Link> }
+          
         </Panel.Heading>
         <Panel.Body>
           { body }

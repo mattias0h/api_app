@@ -1,13 +1,16 @@
-//Posts
+//Posts and comments
 
 export const GET_POSTS = 'GET_POSTS';
 export const GET_POST = 'GET_POST';
+export const DELETE_POST = 'DELETE_POST';
 export const GET_COMMENTS = 'GET_COMMENTS';
 export const POSTS_FETCHED = 'POSTS_FETCHED';
 export const POST_FETCHED = 'POST_FETCHED';
+export const POST_DELETED = 'POST_DELETED';
 export const COMMENTS_FETCHED = 'COMMENTS_FETCHED';
 export const FETCH_POSTS_FAILED = 'FETCH_POSTS_FAILED';
 export const FETCH_POST_FAILED = 'FETCH_POST_FAILED';
+export const DELETE_POST_FAILED = 'DELETE_POST_FAILED';
 export const FETCH_COMMENTS_FAILED = 'FETCH_COMMENTS_FAILED';
 
 

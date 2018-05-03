@@ -25,6 +25,19 @@ export function fetchPost(id) {
   }
 }
 
+export function destroyPost(id) {
+  return (dispatch, getState) => {
+    dispatch(deletePost());
+    return Api.delete(`/posts/${id}`, null).then(resp => {
+      console.log(resp);
+      dispatch(postDeleted(resp));
+    }).catch((ex) => {
+      dispatch(deletePostFailed());
+      console.log(ex);
+    });
+  }
+}
+
 function getPosts() {
   return {
     type: types.GET_POSTS,
@@ -60,5 +73,24 @@ function postFetched(response) {
 function fetchPostFailed() {
   return {
     type: types.FETCH_POST_FAILED
+  }
+}
+
+function deletePost() {
+  return {
+    type: types.DELETE_POST,
+  }
+}
+
+function postDeleted(response) {
+  return {
+    type: types.POST_DELETED,
+    response
+  }
+}
+
+function deletePostFailed() {
+  return {
+    type: types.DELETE_POST_FAILED
   }
 }
